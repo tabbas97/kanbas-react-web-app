@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+</head>
+
+<body>
+    <!-- Implement buttons Collapse All, View Progress, Publish All, + Module, triple-dot menu button. here -->
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Modules</h1>
+        <div style="margin: 10px;">
+            <button class="btn btn-primary wd-modules-button">Collapse All</button>
+            <button class="btn btn-primary wd-modules-button">View Progress</button>
+            <button class="btn btn-primary wd-modules-button">
+                <i class="fa fa-check-circle"></i>
+                Publish All
+            </button>
+            <button class="btn btn-primary wd-modules-button" style="background-color: crimson;">+ Module</button>
+            <button class="btn btn-primary wd-modules-button">
+                <i class="fa fa-ellipsis-v"></i>
+            </button>
+        </div>
+    </div>
+    <ul class="list-group wd-modules">
+        <li class="list-group-item">
+            <div>
+                <i class="fa fa-ellipsis-v"></i> Week 1
+                <span class="float-end">
+                    <i class="fa fa-check-circle text-success"></i>
+                    <i class="fa fa-plus ms-2"></i>
+                    <i class="fa fa-ellipsis-v ms-2"></i>
+                </span>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <i class="fa fa-ellipsis-v"></i> Learning Objectives
+                    <span class="float-end">
+                        <i class="fa fa-check-circle text-success"></i>
+                        <i class="fa fa-ellipsis-v ms-2"></i>
+                    </span>
+                </li>
+            </ul>
+        </li>
+        <li class="list-group-item">
+            <div>
+                <i class="fa fa-ellipsis-v"></i> Week 2
+                <span class="float-end">
+                    <i class="fa fa-check-circle text-success"></i>
+                    <i class="fa fa-plus ms-2"></i>
+                    <i class="fa fa-ellipsis-v ms-2"></i>
+                </span>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
