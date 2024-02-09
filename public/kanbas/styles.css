@@ -13,3 +13,7 @@ body * {
     height: 100%;
     gap: 10px;
 }
+
+.link-red {
+    color: red !important;
+}

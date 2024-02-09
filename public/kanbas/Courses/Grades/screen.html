@@ -1,207 +1,324 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Assignments</title>
-        <link rel="stylesheet" href="/Kanbas/styles.css" />
-        <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
-        <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
-        <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="kanbas-container">
-            <div class="kanbas-navigation">
-                <ul class="wd-kanbas-navigation">
-                    <li>
-                        <a href="/Kanbas/Account/Navigation/index.html">
-                            <i class="fa fa-user " style="color:white"></i>
-                            <br>
-                            Account</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Dashboard/screen.html">
-                            <i class="fa fa-tachometer"></i><br>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li class="wd-active">
-                        <a href="/Kanbas/Courses/Home/screen.html">
-                            <i class="fa fa-book"></i><br>
-                            Courses
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-calendar"></i><br>
-                            Calendar
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-inbox"></i><br>
-                            Inbox
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-clock-rotate-left"></i><br>
-                            History
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-tv"></i><br>
-                            Studio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-right-long"></i><br>
-                            Commons
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-circle-question"></i><br>
-                            Help
-                        </a>
-                    </li>
-                </ul>
-            </div>
 
-            <div>
-                <ul class = "wd-navigation">
-                    <li>
-                        <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                    </li>
-                    <li>
-                        <a href="http://piazza.com">Piazza</a>
-                    </li>
-                    <li>
-                        <a href="#">Zoom Meetings</a>
-                    </li>
-                    <li >
-                        <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                    </li>
-                    <li>
-                        <a href="#">Quizzes</a>
-                    </li>
-                    <li class="wd-active">
-                        <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                    </li>
-                    <li>
-                        <a href="#">People</a>
-                    </li>
-                </ul>
-            </div>
+<head>
+    <title>Assignments</title>
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/screen.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+    <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+</head>
 
-            <div>
-                <table>
-                    <body>
-                        <td>
-                            <select>
-                                <option>Gradebook</option>
-                                <option>Opt 1</option>
-                                <option>Opt 2</option>
-                            </select>
-                        </td>
-                        <td>
-                            <button>
-                                Import
-                            </button>
-                        </td>
-                        <td>
-                            <select>
-                                <option>Export</option>
-                                <option>Opt 1</option>
-                            </select>
-                        </td>
-                        <td>
-                            <button>
-                                Configure
-                            </button>
-                        </td>
-                    </body>
-                </table>
-                
-                <form action = "">
-                    <label for="sname"><h2>Student Names</h2></label>
-                    <input type = "text" placeholder="Search Students">
-                    <label for="sname"><h2>Assignment Names</h2></label>
-                    <input type = "text" placeholder="Search Assignments"><br><br>
-                    <input type="submit" value="Apply Filters">
-                </form><br><br>
-                
-                <table border = "1" width = "100%">
-                    <title>Grades</title>
-                    <body>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>A1 SETUP<br>Out of 100</th>
-                            <th>A2 HTML<br>Out of 100</th>
-                            <th>A3 CSS<br>Out of 100</th>
-                            <th>A4 BOOTSTRAP 4<br>Out of 100</th>
-                            <th>A5 JAVASCRIPT<br>Out of 100</th>
-                            <th>A6 REACT<br>Out of 100</th>
-                            <th>A7 REDUX<br>Out of 100</th>
-                            <th>A8 NODE<br>Out of 100</th>
-                            <th>A9 MONGO<br>Out of 100</th>
-                        </tr>
-                        <tr>
-                            <td>Student 1</td>
-                            <td>100</td>
-                            <td><input type="text" value="100"></td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>Student 2</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td><input type="text" value="90"></td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td>90</td>
-                        </tr>
-                        <tr>
-                            <td>Student 3</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td><input type="text" value="75"></td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td>90</td>
-                        </tr>
-                        <tr>
-                            <td>Student 4</td>
-                            <td>100</td>
-                            <td><input type="text" value="100"></td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td>90</td>
-                            <td>90</td>
-                        </tr>
-                    </body>
-                </table>  
-            </div>
-
+<body>
+    <div class="d-flex">
+        <!-- Kanbas Navigation div -->
+        <div class="d-none d-md-block" id="nav-menu-top-level">
+            <ul class="wd-kanbas-navigation">
+                <li>
+                    <a href="/Kanbas/Account/Navigation/index.html">
+                        <i class="fa fa-user " style="color:white"></i>
+                        <br>
+                        Account</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fa fa-tachometer"></i><br>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="wd-active">
+                    <a href="/Kanbas/Courses/Home/screen.html">
+                        <i class="fa fa-book"></i><br>
+                        Courses
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-calendar"></i><br>
+                        Calendar
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-inbox"></i><br>
+                        Inbox
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-clock-rotate-left"></i><br>
+                        History
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-tv"></i><br>
+                        Studio
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-right-long"></i><br>
+                        Commons
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-circle-question"></i><br>
+                        Help
+                    </a>
+                </li>
+            </ul>
         </div>
-    </body>
+        <div class="d-flex" style="flex-direction: column; width: 100%;">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="wd-top-breadcrumb" style="vertical-align: middle; margin-top: 10px;">
+                    <i class="fa-solid fa-bars fa-1x me-3" style="color: red; vertical-align: middle;"></i>
+                    <!-- Horizontal line -->
+                    <!-- Bootstrap breadcrumb menu -->
+                    <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/Kanbas/Courses/Home/screen.html"
+                                    style="color: red !important;">CS5610.XXXXX.YYYYMM</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Assignments</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="float-end" style="margin-right: 10px; margin-top: 10px; vertical-align: center;">
+                    <a href="" class="btn btn-secondary ellipsis">
+                        <i class="fa-solid fa-glasses me-1"></i>
+                        Student View
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex" style="flex-direction: row;">
+                <!-- Course Navigation div -->
+                <div class="d-none d-md-block">
+                    <ul class="wd-navigation">
+                        <li>
+                            <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                        </li>
+                        <li>
+                            <a href="http://piazza.com">Piazza</a>
+                        </li>
+                        <li>
+                            <a href="#">Zoom Meetings</a>
+                        </li>
+                        <li>
+                            <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                        </li>
+                        <li>
+                            <a href="#">Quizzes</a>
+                        </li>
+                        <li class="wd-active">
+                            <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+                        </li>
+                        <li>
+                            <a href="#">People</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Main Content Div -->
+                <div class="flex-fill" style="margin: 10px;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span></span>
+                        <div class="float-end">
+                            <button class="btn btn-secondary mb-2 text-left ps-4 ellipsis">
+                                <i class="fa-solid fa-file-import"></i> Import
+                            </button>
+                            <button class="btn btn-secondary mb-2 text-left ps-4 ellipsis">
+                                <i class="fa-solid fa-file-export"></i> Export
+                                <!-- dropdown arrow -->
+                                <i class="fa-solid fa-caret-down"></i>
+                            </button>
+                            <button class="btn btn-secondary mb-2 text-left ps-4 ellipsis">
+                                <i class="fa-solid fa-gear"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <form action="/kanbas/courses/grades/screen.html">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="sname" class="form-label">
+                                    <h6>Student Names</h6>
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent">
+                                        <i class="fa-solid fa-search"></i>
+                                    </span>
+
+                                    <input type="text" class="form-control border-start-0" name="sname" id="sname"
+                                        placeholder="Search Students">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="aname" class="form-label">
+                                    <h6>Assignment Names</h6>
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent">
+                                        <i class="fa-solid fa-search"></i>
+                                    </span>
+                                    <input type="text" class="form-control border-start-0" name="aname" id="aname"
+                                        placeholder="Search Assignments">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary mb-3">
+                            <i class="fa-solid fa-filter"></i>
+                            Apply Filters
+                        </button>
+                    </form>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered align-middle">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="fw-medium text-center align-middle">Student Name</th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A1 SETUP</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A2 HTML</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A3 CSS</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A4 BOOTSTRAP 4</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A5 JAVASCRIPT</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A6 REACT</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A7 REDUX</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A8 NODE</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                    <th scope="col" class="fw-normal text-center align-middle">
+                                        <div class="d-flex flex-column"><span>A9 MONGO</span><span
+                                                class="column-subtitle">Out of 100</span></div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="#" class="link-no-decoration link-red fw-normal">Student 1</a>
+                                    </th>
+                                    <td>100</td>
+                                    <td>
+                                        <div class="d-flex flex-row">
+                                            <input type="text" class="form-control form-control-sm focus-red me-1"
+                                                value="100%">
+                                            <button class="btn btn-light p-1">
+                                                <i class="fa-regular fa-square-caret-right"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="#" class="link-no-decoration link-red fw-normal">Student 2</a>
+                                    </th>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>
+                                        <div class="d-flex flex-row">
+                                            <input type="text" class="form-control form-control-sm focus-red me-1"
+                                                value="70%">
+                                            <button class="btn btn-light p-1">
+                                                <i class="fa-regular fa-square-caret-right"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="#" class="link-no-decoration link-red fw-normal">Student 3</a>
+                                    </th>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>
+                                        <div class="d-flex flex-row">
+                                            <input type="text" class="form-control form-control-sm focus-red me-1"
+                                                value="91.5%">
+                                            <button class="btn btn-light p-1">
+                                                <i class="fa-regular fa-square-caret-right"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="#" class="link-no-decoration link-red fw-normal">Student 4</a>
+                                    </th>
+                                    <td>100</td>
+                                    <td>
+                                        <div class="d-flex flex-row">
+                                            <input type="text" class="form-control form-control-sm focus-red me-1"
+                                                value="91.5%">
+                                            <button class="btn btn-light p-1">
+                                                <i class="fa-regular fa-square-caret-right"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                    <td>90</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
 </html>
