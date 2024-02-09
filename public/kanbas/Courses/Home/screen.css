@@ -1,0 +1,9 @@
+/* Flex row container */
+.wd-top-breadcrumb {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    margin-left: 10px;
+    padding-top: 10px;
+}
