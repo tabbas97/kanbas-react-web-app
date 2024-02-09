@@ -143,7 +143,7 @@
                         </div>
                     </div>
 
-                    <div class="d-flex flex-fill flex-column">
+                    <div class="d-flex flex-column mx-4">
                         <hr>
                         <form action="/kanbas/courses/assignments/screen.html" class="mb-3">
                             <div class="mb-3 align-items-center">
@@ -152,76 +152,165 @@
                             </div>
 
                             <div class="mb-3 align-items-center">
-                                <textarea name="adescr" id="adescr" cols="30" rows="5"
-                                    class="form-control">This is the assignment description. 
+                                <textarea name="adescr" id="adescr" cols="30" rows="5" class="form-control">This is the assignment description. 
                                 </textarea>
                             </div>
 
-                            <div class="row mb-3 align-items-center">
-                                <label for="Points" class="col-form-label text-end">Points</label><br><br>
-                                <input type="text" placeholder="100"><br><br>
+                            <div class="row mb-3 align-middle" style="vertical-align: middle;">
+                                <label for="Points" class="col-form-label col-3 text-end">Points</label><br><br>
+                                <div class="col-5">
+                                    <input type="text" class="form-control" id="Points"><br><br>
+                                </div>
+                                <div class="col"></div>
                             </div>
-                            <label for="Points">Points</label><br><br>
-                            <input type="text" placeholder="100"><br><br>
 
-                            <label for="agrp">Assignment Group</label><br><br>
-                            <select>
-                                <option>ASSIGNMENTS</option>
-                                <option>Opt 1</option>
-                                <option>Opt 2</option>
-                            </select><br><br>
+                            <div class="row mb-3 align-middle" style="vertical-align: middle;">
+                                <label for="agrps" class="col-form-label col-3 text-end">Assignment
+                                    Group</label><br><br>
+                                <div class="col-5">
+                                    <select id="agrps" class="form-control">
+                                        <option>ASSIGNMENTS</option>
+                                        <option>Opt 1</option>
+                                        <option>Opt 2</option>
+                                    </select>
+                                </div>
+                                <div class="col"></div>
+                            </div>
 
-                            <label for="gdisp">Display grade as</label>
-                            <select>
-                                <option>Percentage</option>
-                                <option>Opt 1</option>
-                                <option>Opt 2</option>
-                            </select><br><br>
+                            <div class="row mb-3 align-middle" style="vertical-align: middle;">
+                                <label for="gdisp" class="col-form-label col-3 text-end">Display grade
+                                    as</label><br><br>
+                                <div class="col-5">
+                                    <select id="gdisp" class="form-control">
+                                        <option>Percentage</option>
+                                        <option>Opt 1</option>
+                                        <option>Opt 2</option>
+                                    </select>
+                                </div>
+                                <div class="col"></div>
+                            </div>
 
-                            <label for="stype">Submission Type</label><br><br>
-                            <select>
-                                <option>Online</option>
-                                <option>Opt 1</option>
-                                <option>Opt 2</option>
-                            </select><br><br>
+                            <div class="row mb-3 align-middle" style="vertical-align: middle;">
+                                <label for="stype" class="col-form-label col-3 text-end">Submission Type</label><br><br>
+                                <div class="col-5">
+                                    <select id="stype" class="form-control">
+                                        <option>Online</option>
+                                        <option>Opt 1</option>
+                                        <option>Opt 2</option>
+                                    </select>
+                                </div>
+                                <div class="col"></div>
+                            </div>
 
-                            <label for="onlineEntry">Online Entry Options</label><br>
+                            <div class="row mb-3 align-middle" style="vertical-align: middle;">
+                                <label for="onlineEntry" class="col-form-label col-3 text-end">Online Entry
+                                    Options</label><br><br>
+                                <div class="col-5">
+                                    <input type="checkbox" name="onlineEntry" value="checkbox"
+                                        class="form-check-label">Text Entry<br>
+                                    <input type="checkbox" name="onlineEntry" value="checkbox"
+                                        class="form-check-label">Website URL<br>
+                                    <input type="checkbox" name="onlineEntry" value="checkbox"
+                                        class="form-check-label">Media Recordings<br>
+                                    <input type="checkbox" name="onlineEntry" value="checkbox"
+                                        class="form-check-label">Student Annotation<br>
+                                    <input type="checkbox" name="onlineEntry" value="checkbox"
+                                        class="form-check-label">File Uploads<br>
+                                </div>
+                                <div class="col"></div>
+                            </div>
 
-                            <input type="checkbox" name="checkbox" value="checkbox">Text Entry<br>
-                            <input type="checkbox" name="checkbox" value="checkbox">Website URL<br>
-                            <input type="checkbox" name="checkbox" value="checkbox">Media Recordings<br>
-                            <input type="checkbox" name="checkbox" value="checkbox">Student Annotation<br>
-                            <input type="checkbox" name="checkbox" value="checkbox">File Uploads<br>
+                            <div class="row mb-3">
+                                <div class="col-3 text-end col-form-label">
+                                    Assign
+                                </div>
+                                <div class="col-5">
+                                    <div class="border rounded-top p-4">
+                                        <div class="row mb-3">
+                                            <label for="assign" class="form-label ellipsis">
+                                                <h7>Assign to</h7>
+                                            </label>
+                                            <input type="text" class="form-control" id="assign" value="Everyone">
+                                            <!-- <div class="input-group"> -->
+                                            <!-- <span class="input-group-text"> -->
+                                            <!-- <i class="fa fa-user"></i> -->
+                                        </div>
 
-                            <br><br>
+                                        <div class="row mb-3">
+                                            <label for="due" class="form-label ellipsis">
+                                                <h7>Due</h7>
+                                            </label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="due"
+                                                    value="May XX XXXX, 11:59 PM">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div>
 
-                            <label for="assign">Assign</label><br>
-                            Assign to<br>
-                            <input type="text" placeholder="Everyone"><br><br>
+                                        <div class="row" style="padding-bottom: 10px;">
+                                            <div class="col">
+                                                <label for="afrom" class="form-label-ellipsis">
+                                                    <h7>Available from</h7>
+                                                </label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="afrom" name="afrom"
+                                                        value="May XX XXXX, 12:00 AM">
+                                                    <span class="input-group-text">
+                                                        <i class="fa-regular fa-calendar"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
 
-                            <label for="due">Due</label><br>
-                            <input type="date" name="due" id="due" value="2024-02-10"><br><br>
+                                            <div class="col">
+                                                <label for="atill" class="form-label-ellipsis">
+                                                    <h7>Until</h7>
+                                                </label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="atill" name="atill"
+                                                        value="May XX XXXX, 12:00 AM">
+                                                    <span class="input-group-text">
+                                                        <i class="fa-regular fa-calendar"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
 
-                            <label for="afrom">Available from</label><br>
-                            <input type="date" name="afrom" id="afrom" value="2024-02-01"><br><br>
+                                        </div>
+                                    </div>
 
-                            <label for="atill">Until</label><br>
-                            <input type="date" name="atill" id="atill" value="2024-02-12"><br><br>
-                        </form>
-                        <table>
-
-                            <body>
-                                <td><button>Cancel</button></td>
-                                <td><button>Save</button></td>
-                            </body>
-                        </table>
+                                    <div
+                                        class="d-flex border rounded-bottom border-top-0 justify-content-center align-items-center p-1 bg-light">
+                                        <a href="#" style="text-decoration: none; color: black;">
+                                            <i class="fa-solid fa-plus me-1"></i>
+                                            Add</a>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
 
-                </div>
+                    <div class="d-flex flex-row">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="notifyUserContentChange">
+                            <label class="form-check-label" for="notifyUserContentChange">
+                                Notify users that this content has changed
+                            </label>
+                        </div>
+                        <div class="ms-auto">
+                            <button class="btn btn-secondary me-1">
+                                Cancel
+                            </button>
+                            <button class="btn btn-danger me-1">
+                                Save
+                            </button>
+                        </div>
+                    </div>
 
+                    </form>
+
+                </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
