@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import "./index.css";
 import "../../index.css";
@@ -33,7 +33,7 @@ function BreadCrumbNav() {
         // The following elements will be used to build the breadcrumb
         let elements = [];
 
-        if (courseInd != -1) {
+        if (courseInd !== -1) {
             // If we are in a course, add the course name to the breadcrumb
             if (courseInd + 2 < urlSegs.length) {
                 // Add every element following the course name to the breadcrumb
@@ -66,7 +66,7 @@ function BreadCrumbNav() {
         }
 
         // Add the last element to the breadcrumb
-        if (urlSegs[urlSegs.length - 1] != "") {
+        if (urlSegs[urlSegs.length - 1] !== "") {
             elements.push(
                 <li className='breadcrumb-item active' aria-current="page">
                     {urlSegs[urlSegs.length - 1]}

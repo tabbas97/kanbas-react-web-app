@@ -1,6 +1,4 @@
-import { courses } from "../../Kanbas/Database";
-import { HiMiniBars3 } from "react-icons/hi2";
-import { Navigate, Route, Routes, useParams, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import CourseNavigation from "./Navigation";
 import BreadCrumbNav from "./Breadcrumb";
 import Modules from "./Modules";
@@ -9,10 +7,7 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 
-function Courses() {
-    const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
-    
+function Courses() {    
     
     return (
         <div>
