@@ -1,0 +1,9 @@
+.breadcrumb-item+.breadcrumb-item:before {
+    content: ">" !important;
+    color: grey;
+}
+
+/* Breadcrumb menu min-height - 80 px */
+.breadcrumb-hg-80 {
+    min-height: 80px;
+}
