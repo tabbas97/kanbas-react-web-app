@@ -1,7 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteTodo, setTodo } from "./todosReducer";
-import { LabState, TodoType } from "../../../store";
+import { TodoType } from "../../../store";
 
 function TodoItem({todo}: {todo: TodoType}) {
     const dispatch = useDispatch();

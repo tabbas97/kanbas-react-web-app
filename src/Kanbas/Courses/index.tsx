@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import CourseNavigation from "./Navigation";
 import BreadCrumbNav from "./Breadcrumb";
 import Modules from "./Modules";
@@ -7,9 +7,7 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 
-function Courses({ courses }: { courses: any[]; }) {    
-    const courseId = useParams();
-    const course = courses.find((c) => c._id === courseId);
+function Courses({ courses }: { courses: any[]; }) {
     return (
         <div className="row">
             <BreadCrumbNav/>

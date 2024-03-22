@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import * as db from "../../../Database";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
