@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
 import { setAssignment, updateAssignment } from "../reducer";
 
-function AssignmentEditor() {
+function NewAssignmentEditor() {
 
-    const { assignmentId } = useParams();
+    // Assign a new random id to the new assignment
+    const assignmentId = new Date().getTime().toString();
     const assignmentsList = useSelector((state: KanbasState) => state.assignmentsReducer.assignments);
     const assignment = assignmentsList.find(
         (assignment) => assignment._id === assignmentId);
@@ -15,6 +16,7 @@ function AssignmentEditor() {
     const dispatch = useDispatch();
     
     const { courseId } = useParams();
+    assignment.course = courseId;
     const navigate = useNavigate();
 
     const assignmentStartState = db.assignments.find(
@@ -29,6 +31,7 @@ function AssignmentEditor() {
     
     const handleSave = () => {
         console.log("Actually saving assignment TBD in later assignments");
+        dispatch(updateAssignment(assignment));
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
     
@@ -113,4 +116,4 @@ function AssignmentEditor() {
 
 }
 
-export default AssignmentEditor;
+export default NewAssignmentEditor;

@@ -1,37 +1,39 @@
 import React from "react";
-import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
+import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
+import * as db from "../../Database";
 import { assignments } from "../../Database";
+import AssignmentsList from "./List";
+
 function Assignments() {
     const { courseId } = useParams();
+    const assignments = db.assignments;
     const assignmentList = assignments.filter(
         (assignment) => assignment.course === courseId);
     // console.log(assignmentList);
+
     return (
-        <>
-            {/* {< !--Add buttons and other fields here -->} */}
-            <ul className="list-group wd-modules">
-                <li className="list-group-item">
-                    <div>
-                        <FaEllipsisV className="me-2" /> ASSIGNMENTS
-                        <span className="float-end">
-                            <FaCheckCircle className="text-success" />
-                            <FaPlusCircle className="ms-2" /><FaEllipsisV className="ms-2" />
-                        </span>
-                    </div>
-                    <ul className="list-group">
-                        {assignmentList.map((assignment) => (
-                            <li className="list-group-item">
-                                <FaEllipsisV className="me-2" />
-                                <Link
-                                    to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}>{assignment.title}</Link>
-                                <span className="float-end">
-                                    <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
-                            </li>))}
-                    </ul>
-                </li>
-            </ul>
-        </>
-    );
+        <div className="row">
+            {/* <div className="justify-content-between" >
+                <h2 className="me-3 wd-assignments-section-title border border-1 border-bottom-0">Course Assignments - {courseId}</h2>
+                <button className="btn btn-primary">
+                    <FaPlusCircle /> Add Assignment
+                </button>
+            </div> */}
+
+            <AssignmentsList />
+
+            {/* <div className="list-group">
+                {assignmentList.map((assignment) => (
+                    <Link 
+                        key={assignment._id}
+                        to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                        className="list-group-item me-3">
+                            {assignment.title}
+                    </Link>
+                ))}
+            </div> */}
+        </div>
+    )
 }
 export default Assignments;

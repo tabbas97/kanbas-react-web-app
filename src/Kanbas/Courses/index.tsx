@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import CourseNavigation from "./Navigation";
 import BreadCrumbNav from "./Breadcrumb";
 import Modules from "./Modules";
@@ -7,14 +7,14 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 
-function Courses() {    
-    
+function Courses({ courses }: { courses: any[]; }) {    
+    const courseId = useParams();
+    const course = courses.find((c) => c._id === courseId);
     return (
-        <div>
+        <div className="row">
             <BreadCrumbNav/>
-            {/* <h1><HiMiniBars3 /> Course {course?.name}</h1> */}
             <CourseNavigation />
-            <div>
+            <div className="col">
                 <div
                     className="overflow-y-scroll position-fixed bottom-0 end-0"
                     style={{ left: "320px", top: "50px" }} >
@@ -25,6 +25,7 @@ function Courses() {
                         <Route path="Piazza" element={<h1>Piazza</h1>} />
                         <Route path="Assignments" element={<Assignments/>} />
                         <Route path="Assignments/:assignmentId" element={<AssignmentEditor/>} />
+                        <Route path="Assignments/new" element={<AssignmentEditor/>} />
                         <Route path="Grades" element={<Grades/>} />
                     </Routes>
                 </div>
