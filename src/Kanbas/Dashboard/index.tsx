@@ -40,9 +40,9 @@ function Dashboard(
                         <div key={course._id} className="col" style={{ width: 300 }}>
                             <Link to={`/Kanbas/Courses/${course._id}/Home`} style={{ textDecoration: "none", color: "navy" }}>
                                 <div className="card">
-                                    <img className="card-img-top" style={{ height: 150 }} alt={course.name}
+                                    {/* <img className="card-img-top" style={{ height: 150 }} alt={course.name}
                                         src={require("../assets/images/" + course.image)}
-                                    />
+                                    /> */}
                                     {/* <img src={`/assets/images/spaceship-design.jpg`} className="card-img-top" style={{ height: 150 }} /> */}
                                     <div className="card-body">
                                         <Link className="card-title" to={`/Kanbas/Courses/${course._id}/Home`}

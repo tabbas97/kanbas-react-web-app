@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import CourseNavigation from "./Navigation";
 import BreadCrumbNav from "./Breadcrumb";
 import Modules from "./Modules";
@@ -6,8 +6,10 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-function Courses({ courses }: { courses: any[]; }) {
+function Courses() {
     return (
         <div className="row">
             <BreadCrumbNav/>
