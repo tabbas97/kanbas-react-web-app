@@ -4,10 +4,11 @@ import WorkingWithOwnObjects from "./WorkingWithOwnObjects";
 import WorkingWithArrays from "./WorkingWithArrays";
 
 function Assignment5() {
+    const API_BASE = process.env.REACT_APP_API_BASE;
     return (
         <div>
             <h1>Assignment 5</h1>
-            <a href="http://localhost:4000/a5/welcome">
+            <a href="https://kanbas-node-server-app-367k.onrender.com/a5/welcome">
                 Welcome
             </a>
             <hr />

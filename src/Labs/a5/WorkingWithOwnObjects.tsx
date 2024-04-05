@@ -8,7 +8,7 @@ function WorkingWithOwnObjects() {
     course: "Web Development",
   });
 
-  const MODULE_URL = "http://localhost:4000/a5/module";
+  const MODULE_URL = "https://kanbas-node-server-app-367k.onrender.com/a5/module";
 
   return (
     <div>
