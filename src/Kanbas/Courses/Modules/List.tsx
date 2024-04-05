@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
@@ -34,7 +34,7 @@ function ModuleList() {
   };
 
   const handleUpdateModule = async () => {
-    const status = await client.updateModule(module);
+    await client.updateModule(module);
     dispatch(updateModule(module));
   };
 

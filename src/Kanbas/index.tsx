@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import KanbasNavigation from "./Navigation";
 import Courses from "./Courses";
@@ -25,7 +25,7 @@ function Kanbas() {
         image: "rocket-prop.jpg"
     });
     const updateCourse = async () => {
-        const response = await axios.put(`${COURSES_API}/${course._id}`, course);
+        await axios.put(`${COURSES_API}/${course._id}`, course);
         setCourses(
             courses.map((c) => {
                 if (c._id === course._id) {
@@ -41,7 +41,7 @@ function Kanbas() {
         setCourses([...courses, response.data ]);
     };
     const deleteCourse = async (courseId: string) => {
-        const response = await axios.delete(`${COURSES_API}/${courseId}`);
+        await axios.delete(`${COURSES_API}/${courseId}`);
         setCourses(courses.filter((course) => course._id !== courseId));
     }
     return (
