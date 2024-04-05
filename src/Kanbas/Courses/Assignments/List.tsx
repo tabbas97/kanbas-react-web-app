@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 
 import {
-    deleteAssignment
+    deleteAssignment,
+    setAssignment,
+    setAssignments,
+    addAssignment,
+    updateAssignment
 } from "./reducer";
 import { KanbasState } from "../../store";
 import { FaPlusCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { findAssignmentsForCourse } from "./client";
 
 function AssignmentsList() {
     const { courseId } = useParams();
+
+    useEffect(() => {
+        findAssignmentsForCourse(courseId ?? "")
+            .then((assignments) => dispatch(setAssignments(assignments)));
+    } , [courseId]);
     const assignmentsList = useSelector((state: KanbasState) => state.assignmentsReducer.assignments);
     const dispatch = useDispatch();
+
 
     return (
         <div className="row">

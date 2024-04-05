@@ -4,8 +4,10 @@ import * as db from "../../../Database";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../../store";
 import { setAssignment, updateAssignment } from "../reducer";
+import axios from "axios";
 
 function AssignmentEditor() {
+    const API_BASE = process.env.REACT_APP_API_BASE;
 
     const { assignmentId } = useParams();
     const assignmentsList = useSelector((state: KanbasState) => state.assignmentsReducer.assignments);
@@ -27,8 +29,8 @@ function AssignmentEditor() {
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     }
     
-    const handleSave = () => {
-        console.log("Actually saving assignment TBD in later assignments");
+    const handleSave = async () => {
+        await axios.put(`${API_BASE}/api/assignments/${assignment._id}`, assignment);
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
     
