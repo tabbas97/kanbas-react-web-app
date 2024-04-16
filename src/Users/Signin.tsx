@@ -20,10 +20,10 @@ export default function Signin() {
     };
 
     return (
-        <div>
+        <div className="row m-2">
             <h1>Sign in</h1>
-            <input value={credentials.username} onChange={(e) => setCredentials({ ...credentials, username: e.target.value })} />
-            <input value={credentials.password} onChange={(e) => setCredentials({ ...credentials, password: e.target.value })} />
+            <input className="form-control m-2" value={credentials.username} onChange={(e) => setCredentials({ ...credentials, username: e.target.value })} />
+            <input className="form-control m-2" value={credentials.password} onChange={(e) => setCredentials({ ...credentials, password: e.target.value })} />
             <button onClick={signin}>Sign in</button>
         </div>
     );
