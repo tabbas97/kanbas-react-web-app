@@ -62,6 +62,8 @@ export const signup = async (user: any) => {
 }
 
 export const signout = async () => {
-    const response = await axios.get(`${USERS_API}/signout`);
+    // Access resource without CORS
+    // const response = await axios.get(`${USERS_API}/signout`);
+    const response = await axios.post(`${USERS_API}/signout`);
     return response.data;
 }
