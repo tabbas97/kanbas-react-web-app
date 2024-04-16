@@ -22,8 +22,8 @@ export default function Signin() {
   return (
     <div className="m-2">
       <h1>Sign in</h1>
-      <div className="col-md-6 col-md-offset-3 text-center">
-        <div className="row ">
+      <div className="col-md-3 col-md-offset-3 text-center">
+        <div className="col">
           <input
             className="form-control m-2"
             placeholder="Username"
