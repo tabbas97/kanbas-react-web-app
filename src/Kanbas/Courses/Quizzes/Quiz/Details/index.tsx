@@ -18,14 +18,14 @@ export default function QuizDetail({quiz} : {quiz : QuizInterface}) {
         return new Date().toLocaleDateString();
     }
 
-    const handle_SaveQuiz = async (quiz: QuizInterface) => {
+    const handle_SaveQuiz = async () => {
         // console.log("QUIZ DETAILS: Handle Save Quiz : ", quiz.availableDate.toISOString());
         // console.log("QUIZ DETAILS: Handle Save Quiz : ", quiz.dueDate);
         // console.log("QUIZ DETAILS: Handle Save Quiz : ", quiz.untilDate);
         // await client.updateQuiz(quiz).then(() => {
             // navigate(`/Kanbas/Courses/${courseId}/Quizzes`);
         // });
-        console.log("QUIZ NAVIGATING BACK: ", quiz);
+        // console.log("QUIZ NAVIGATING BACK: ", quiz);
         navigate(`/Kanbas/Courses/${courseId}/Quizzes`);
     }
 
@@ -72,7 +72,7 @@ export default function QuizDetail({quiz} : {quiz : QuizInterface}) {
                 <h2>Quiz Details</h2>
             </div>
             <div className="row btn-row pub-button-bar">
-                <button className="btn btn-primary" onClick={() => handle_SaveQuiz(quiz)}>Save</button>
+                <button className="btn btn-primary" onClick={() => handle_SaveQuiz}>Save</button>
                 <button className="btn btn-primary" onClick={() => handle_EditQuiz(quiz)}>Edit</button>
                 {quiz.published ? (
                     <button className="btn btn-primary" onClick={() => handle_UnPublishQuiz(quiz)}>Unpublish</button>
@@ -153,10 +153,10 @@ export default function QuizDetail({quiz} : {quiz : QuizInterface}) {
             <div className="row">
                 <div className="col">
                     {/* Save */}
-                    <button className="btn btn-primary" onClick={() => handle_SaveQuiz(quiz)}>Save</button>
+                    <button className="btn btn-primary" onClick={() => handle_SaveQuiz}>Save</button>
                     {/* Preview */}
                     <button className="btn btn-primary" onClick={() => navigate(
-                        `/Kanbas/Courses/${courseId}/Quizzes/${quiz._id}/Preview`
+                        `/Kanbas/Courses/${courseId}/Quizzes/${quizId}/Preview`
                     )}>Preview</button>
                 </div>
             </div>

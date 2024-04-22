@@ -37,8 +37,8 @@ export default function QuizEditor({quiz, updateUpstream} : {quiz: QuizInterface
         await client.updateQuiz(updatedQuizInfo).then((updatedQuiz) => {
             updateUpstream(updatedQuiz);
             console.log("Upstream update complete");
-            navigate(`/Kanbas/courses/${courseId}/quizzes/${quiz._id}`);
         });
+        navigate(`/Kanbas/courses/${courseId}/quizzes/${quiz._id}`);
     };
 
     const handleAddNewQuestion = async () => {
