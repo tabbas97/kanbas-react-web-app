@@ -6,6 +6,7 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
+import Quizzes from "./Quizzes";
 
 function Courses() {
     return (
@@ -25,6 +26,7 @@ function Courses() {
                         <Route path="Assignments/:assignmentId" element={<AssignmentEditor/>} />
                         <Route path="Assignments/new" element={<AssignmentEditor/>} />
                         <Route path="Grades" element={<Grades/>} />
+                        <Route path="Quizzes/*" element={<Quizzes/>} />
                     </Routes>
                 </div>
             </div>

@@ -9,8 +9,6 @@ function BreadCrumbNav() {
 
     const path = useLocation().pathname;
     const urlSegs = path ? path.split("/") : [];
-    console.log("Path: " + path);
-    console.log(urlSegs);
 
     // Check if the path is empty
     if (urlSegs.length < 3) {

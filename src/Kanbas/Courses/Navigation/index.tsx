@@ -1,8 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import "./index.css"; // feel free to use the CSS from previous assignments
 function CourseNavigation() {
-    const links = ["Home", "Modules", "Piazza", "Grades", "Assignments"];
+    const links = ["Home", "Modules", "Piazza", "Grades", "Assignments", "Quizzes"];
     const { pathname } = useLocation();
+    console.log(pathname);
+    console.log(links);
     return (
         <ul className="wd-navigation">
             {links.map((link, index) => (

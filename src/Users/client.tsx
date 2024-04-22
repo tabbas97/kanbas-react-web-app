@@ -11,7 +11,6 @@ export interface User {
     lastName: string;
 }
 
-
 export const signin = async (credentials: User) => {
     console.log("BASE_API", BASE_API);
     console.log("credentials", credentials);

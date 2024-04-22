@@ -7,6 +7,7 @@ import Dashboard from "./Dashboard";
 import { Provider } from "react-redux";
 import store from "./store";
 import axios from "axios";
+import AssignmentEditor from "./Courses/Assignments/Editor";
 
 function Kanbas() {
     const [courses, setCourses] = useState<any[]>([]);
@@ -50,7 +51,6 @@ function Kanbas() {
             <div className="d-flex">
                 <KanbasNavigation />
                 <div style={{ flexGrow: 1 }}>
-
                     <Routes>
                         <Route path="/" element={<Navigate to="Dashboard" />} />
                         <Route path="Account/*" element={<Account />} />
@@ -64,6 +64,7 @@ function Kanbas() {
                                 updateCourse={updateCourse} />
                         } />
                         <Route path="Courses/:courseId/*" element={<Courses/>} />
+                        <Route path="Courses/:courseId/Assignments/:assignmentId" element={<AssignmentEditor />} />
                     </Routes>
                 </div>
             </div>
