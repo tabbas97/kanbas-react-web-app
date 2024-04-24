@@ -17,7 +17,7 @@ const signup = async () => {
     <div>
       <h1>Signup</h1>
       {error && <div>{error}</div>}
-      <input
+      <input className="form-control"
         value={user.username}
         onChange={(e) =>
           setUser({
@@ -26,7 +26,7 @@ const signup = async () => {
           })
         }
       />
-      <input
+      <input className="form-control"
         value={user.password}
         onChange={(e) =>
           setUser({
@@ -35,7 +35,7 @@ const signup = async () => {
           })
         }
       />
-      <button onClick={signup}> Signup </button>
+      <button className="btn btn-primary" onClick={signup}> Signup </button>
     </div>
   );
 }

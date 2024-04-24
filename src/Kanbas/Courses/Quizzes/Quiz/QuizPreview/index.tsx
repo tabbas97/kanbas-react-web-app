@@ -15,17 +15,17 @@ export default function QuizPreview({
 
   return (
     <div className="container">
-      <h2>Quiz Preview : {quiz.title}</h2>
+      <h2>Preview</h2>
 
       {quiz.oneQuestionAtATime && questions.length > 0 && (
         <div>
-          <div className="card">
+          <div className="card mt-2 mb-2">
             <div className="card-header">
               <div className="row">
                 <h3 className="col-8">Question - {activeQuestion + 1}</h3>
-                <h4 className="col-4 text-end">
+                <h3 className="col-4 text-end">
                   {questions[activeQuestion].title}
-                </h4>
+                </h3>
               </div>
             </div>
             <div className="card-body">
@@ -68,7 +68,7 @@ export default function QuizPreview({
           </div>
 
           <div>
-            <div className="row">
+            <div className="row btn-row pub-button-bar col-lg-4">
               <div className="col">
                 <button
                   className="btn btn-primary"
@@ -96,20 +96,13 @@ export default function QuizPreview({
             </div>
           </div>
           <div className="row">
-            <div className="col list-group">
+            {/* <div className="col col-lg-4 list-group"> */}
               {questions.map((q, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  className={`list-group-item ${
-                    activeQuestion === index ? "active" : ""
-                  }`}
-                  onClick={() => setactiveQuestion(index)}
-                >
-                  Question - {index + 1}
+                <button key={index} type="button" className={`col col-lg-1 ms-2 btn btn-primary ${ activeQuestion === index ? "active" : ""}`} onClick={() => setactiveQuestion(index)}>
+                  {index + 1}
                 </button>
               ))}
-            </div>
+            {/* </div> */}
           </div>
         </div>
       )}
@@ -118,7 +111,7 @@ export default function QuizPreview({
         <div className="container">
           <div className="list-group">
             {questions.map((question, index) => (
-              <div className="card">
+              <div className="card mt-2 mb-2">
                 <div className="card-header">
                   <div className="row">
                     <h3 className="col-8">Question - {index + 1}</h3>
@@ -167,7 +160,7 @@ export default function QuizPreview({
       <div className="row">
         <div className="col">
           <button
-            className="btn btn-primary"
+            className="btn btn-primary mt-2 mb-2"
             onClick={() =>
               navigate(`/Kanbas/courses/${courseId}/quizzes/${quizId}/Edit`)
             }

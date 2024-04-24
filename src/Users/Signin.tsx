@@ -15,8 +15,14 @@ export default function Signin() {
 
   const navigate = useNavigate();
   const signin = async () => {
-    await client.signin(credentials);
-    navigate("/Kanbas/Account/Profile");
+    await client.signin(credentials)
+      .then(() => {navigate("/Kanbas/Account/Profile");})
+      .catch(() => window.alert("Unable to log in. Please enter valid credentials"))
+      ;
+  };
+
+  const signup = async () => {
+    navigate("/Kanbas/Account/Signup");
   };
 
   return (
@@ -43,6 +49,9 @@ export default function Signin() {
         </div>
         <button className="btn btn-primary" onClick={signin}>
           Sign in
+        </button>
+        <button className="btn btn-primary" onClick={signup}>
+          Sign up
         </button>
       </div>
     </div>

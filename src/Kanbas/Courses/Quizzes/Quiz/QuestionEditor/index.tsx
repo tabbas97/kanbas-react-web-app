@@ -68,6 +68,10 @@ export default function QuestionEditor() {
       navigate(`/Kanbas/courses/${courseId}/quizzes/${quizId}/Edit`);
     });
   };
+  
+  const handleCancel = async () => {
+    navigate(`/Kanbas/courses/${courseId}/quizzes/${quizId}/Edit`);
+  }
 
   return (
     <div className="container">
@@ -190,6 +194,9 @@ export default function QuestionEditor() {
           <button className="btn btn-primary" onClick={handleAddChoice}>
             {" "}
             Add Option{" "}
+          </button>
+          <button className="btn btn-primary" onClick={handleCancel}>
+            Cancel
           </button>
         </div>
       </div>

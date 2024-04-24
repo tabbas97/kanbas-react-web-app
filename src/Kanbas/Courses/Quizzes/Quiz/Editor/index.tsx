@@ -11,7 +11,7 @@ import {
     setQuestions
 } from "../reducer";
 import { KanbasState } from "../../../../store";
-import { FaBan, FaCalendar, FaCheckCircle, FaEllipsisV, FaRocket } from "react-icons/fa";
+import { FaBan, FaCalendar, FaCheckCircle, FaEllipsisV, FaEdit } from "react-icons/fa";
 
 export default function QuizEditor({quiz, updateUpstream} : {quiz: QuizInterface, updateUpstream : any}){
 
@@ -101,171 +101,185 @@ export default function QuizEditor({quiz, updateUpstream} : {quiz: QuizInterface
             </ul>
             {activeTab === 'details' && (
                 <form>
-                    <div className="form-group">
-                        <label htmlFor="title">Title</label>
-                        <input type="text" className="form-control" id="title" value={quiz.title} onChange={(e) => updateUpstream({...quiz, title: e.target.value})}/>
+                    <div className="form-group row m-2">
+                        <div className="col"><label className="col-form-label text-end col-lg-7 col-sm-4" htmlFor="title">Title</label></div>
+                        <div className="col"><input type="text" className="form-control" id="title" value={quiz.title} onChange={(e) => updateUpstream({...quiz, title: e.target.value})}/></div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="points">Points</label>
-                        {/* Disabled will remove from form submission */}
-                        <input type="number" className="form-control" id="points" placeholder="0" value={totalPoints} readOnly/>
+                    <div className="form-group row m-2">
+                        <div className="col"><label className="col-form-label text-end col-lg-7 col-sm-4" htmlFor="points">Points</label></div>
+                        <div className="col"><input type="number" className="form-control" id="points" placeholder="0" value={totalPoints} readOnly/></div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="quizType">Quiz Type</label>
-                        <select className="form-control" id="quizType" value={quiz.quizType} onChange={(e) => updateUpstream({...quiz, quizType: e.target.value})}>
+                    <div className="form-group row m-2">
+                        <div className="col m-2"><label className="col-form-label text-end col-lg-7 col-sm-4" htmlFor="quizType">Quiz Type</label></div>
+                        <div className="col m-2"><select className="form-control" id="quizType" value={quiz.quizType} onChange={(e) => updateUpstream({...quiz, quizType: e.target.value})}>
                             <option value="Graded Quiz">Graded Quiz</option>
                             <option value="Practice Quiz">Practice Quiz</option>
                             <option value="Graded Survey">Graded Survey</option>
                             <option value="Ungraded Survey">Ungraded Survey</option>
-                        </select>
+                        </select> </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="selectedAssignmentGroup">Assignment Group</label>
-                        <select className="form-control" id="selectedAssignmentGroup" value={quiz.assignmentGroup} onChange={(e) => updateUpstream({...quiz, assignmentGroup: e.target.value})}>
+                    <div className="form-group row m-2">
+                        <div className="col"><label className="col-form-label text-end col-lg-7 col-sm-4" htmlFor="selectedAssignmentGroup">Assignment Group</label></div>
+                        <div className="col"><select className="form-control" id="selectedAssignmentGroup" value={quiz.assignmentGroup} onChange={(e) => updateUpstream({...quiz, assignmentGroup: e.target.value})}>
                             <option value="Quizzes">Quizzes</option>
                             <option value="Exams">Exams</option>
                             <option value="Assignments">Assignments</option>
                             <option value="Projects">Projects</option>
                         </select>
+                        </div>
                     </div>
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input" 
-                            type="checkbox" 
-                            value="" 
-                            id="shuffleAnswersCheck" 
-                            checked={quiz.shuffleAnswers} 
-                            onChange={(e) => updateUpstream({ ...quiz, shuffleAnswers: e.target.checked })}
-                        />
-                        <label className="form-check-label" htmlFor="shuffleAnswersCheck">
-                            Shuffle Answers
-                        </label>
+                    <div className="form-check m-2 row d-flex justify-content-between">
+                        <div className="col">
+                            <label className="form-check-label" htmlFor="shuffleAnswersCheck"> Shuffle Answers </label>
+                            <input className="form-check-input" type="checkbox" value="" id="shuffleAnswersCheck" checked={quiz.shuffleAnswers} onChange={(e) => updateUpstream({ ...quiz, shuffleAnswers: e.target.checked })}/>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="quizTime">Time Limit</label>
-                        <input 
+                    <div className="form-group row m-2">
+                        <div className="col"><label htmlFor="quizTime">Time Limit</label></div>
+                        <div className="col"><input 
                             type="number" 
                             className="form-control" 
                             id="quizTime" 
                             placeholder="0" 
                             value={quiz.timeLimit} 
                             onChange={(e) => updateUpstream({ ...quiz, timeLimit: parseInt(e.target.value) || -1 })} />
+                            </div>
                     </div>
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input" 
-                            type="checkbox" 
-                            value="" 
-                            id="multipleAttemptsCheck" 
-                            checked={quiz.multipleAttempts} 
-                            onChange={(e) => updateUpstream({ ...quiz, multipleAttempts: e.target.checked })}
-                        />
-                        <label className="form-check-label" htmlFor="multipleAttemptsCheck">
-                            Multiple Attempts?
-                        </label>
+                    <div className="form-check row m-2">
+                        <div className="col">
+                            <input 
+                                className="form-check-input" 
+                                type="checkbox" 
+                                value="" 
+                                id="multipleAttemptsCheck" 
+                                checked={quiz.multipleAttempts} 
+                                onChange={(e) => updateUpstream({ ...quiz, multipleAttempts: e.target.checked })}
+                            />
+                            <label className="form-check-label" htmlFor="multipleAttemptsCheck">
+                                Multiple Attempts?
+                            </label>
+                        </div>
                     </div>
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input" 
-                            type="checkbox" 
-                            value="" 
-                            id="showCorrectCheck" 
-                            checked={quiz.showCorrectAnswers} 
-                            onChange={(e) => updateUpstream({ ...quiz, showCorrectAnswers: e.target.checked })}
-                        />
-                        <label className="form-check-label" htmlFor="showCorrectCheck">
-                            Show Correct Answers?
-                        </label>
+                    <div className="form-check row m-2">
+                        <div className="col">
+                            <input 
+                                className="form-check-input" 
+                                type="checkbox" 
+                                value="" 
+                                id="showCorrectCheck" 
+                                checked={quiz.showCorrectAnswers} 
+                                onChange={(e) => updateUpstream({ ...quiz, showCorrectAnswers: e.target.checked })}
+                            />
+                            <label className="form-check-label" htmlFor="showCorrectCheck">
+                                Show Correct Answers?
+                            </label>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="accessCode">Access Code</label>
-                        <input 
-                            type="text" 
-                            className="form-control" 
-                            id="accessCode" 
-                            placeholder="(Optional) Enter access code" 
-                            value={quiz.accessCode} 
-                            onChange={(e) => updateUpstream({ ...quiz, accessCode: e.target.value })} 
-                        />
+                    <div className="form-group row m-2">
+                        <div className="col">
+                            <label htmlFor="accessCode">Access Code</label>
+                        </div>
+                        <div className="col">
+                            <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    id="accessCode" 
+                                    placeholder="(Optional) Enter access code" 
+                                    value={quiz.accessCode} 
+                                    onChange={(e) => updateUpstream({ ...quiz, accessCode: e.target.value })} 
+                                />
+                        </div>
                     </div>
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input" 
-                            type="checkbox" 
-                            value="" 
-                            id="oneQuestionCheck" 
-                            checked={quiz.oneQuestionAtATime} 
-                            onChange={(e) => updateUpstream({ ...quiz, oneQuestionAtATime: e.target.checked })}
-                        />
-                        <label className="form-check-label" htmlFor="oneQuestionCheck">
-                            One Question at a Time?
-                        </label>
+                    <div className="form-check row m-2">
+                        <div className="col">
+                            <input 
+                                className="form-check-input" 
+                                type="checkbox" 
+                                value="" 
+                                id="oneQuestionCheck" 
+                                checked={quiz.oneQuestionAtATime} 
+                                onChange={(e) => updateUpstream({ ...quiz, oneQuestionAtATime: e.target.checked })}
+                            />
+                            <label className="form-check-label" htmlFor="oneQuestionCheck">
+                                One Question at a Time?
+                            </label>
+                        </div>
                     </div>
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input" 
-                            type="checkbox" 
-                            value="" 
-                            id="webcamRequiredCheck" 
-                            checked={quiz.webcamRequired} 
-                            onChange={(e) => updateUpstream({ ...quiz, webcamRequired: e.target.checked })}
-                        />
-                        <label className="form-check-label" htmlFor="webcamRequiredCheck">
-                            Webcam Required?
-                        </label>
+                    <div className="form-check row m-2">
+                        <div className="col">
+                            <input 
+                                className="form-check-input" 
+                                type="checkbox" 
+                                value="" 
+                                id="webcamRequiredCheck" 
+                                checked={quiz.webcamRequired} 
+                                onChange={(e) => updateUpstream({ ...quiz, webcamRequired: e.target.checked })}
+                            />
+                            <label className="form-check-label" htmlFor="webcamRequiredCheck">
+                                Webcam Required?
+                            </label>
+                        </div>
                     </div>
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input" 
-                            type="checkbox" 
-                            value="" 
-                            id="lockQuestionCheck" 
-                            checked={quiz.lockQuestionsAfterAnswering} 
-                            onChange={(e) => updateUpstream({ ...quiz, lockQuestionsAfterAnswering: e.target.checked })}
-                        />
-                        <label className="form-check-label" htmlFor="lockQuestionCheck">
-                            Lock Questions after Answering?
-                        </label>
+                    <div className="form-check row m-2">
+                        <div className="col">
+                            <input 
+                                className="form-check-input" 
+                                type="checkbox" 
+                                value="" 
+                                id="lockQuestionCheck" 
+                                checked={quiz.lockQuestionsAfterAnswering} 
+                                onChange={(e) => updateUpstream({ ...quiz, lockQuestionsAfterAnswering: e.target.checked })}
+                            />
+                            <label className="form-check-label" htmlFor="lockQuestionCheck">
+                                Lock Questions after Answering?
+                            </label>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="dueDate">Due Date</label>
-                        <input 
-                            type="date" 
-                            className="form-control" 
-                            id="dueDate" 
-                            value={new Date(quiz.dueDate).toISOString().split('T')[0]}
-                            onChange={(e) => updateUpstream({ ...quiz, dueDate: new Date(e.target.value) })} 
-                        />
+                    <div className="form-group row">
+                        <div className="col col-form-label text-end"><label className="" htmlFor="dueDate">Due Date</label></div>
+                        <div className="col">
+                            <input 
+                                type="date" 
+                                className="form-control" 
+                                id="dueDate" 
+                                value={new Date(quiz.dueDate).toISOString().split('T')[0]}
+                                onChange={(e) => updateUpstream({ ...quiz, dueDate: new Date(e.target.value) })} 
+                            />
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="availableDate">Available Date</label>
-                        <input 
-                            type="date" 
-                            className="form-control" 
-                            id="availableDate" 
-                            value={new Date(quiz.availableDate).toISOString().split('T')[0]}
-                            onChange={(e) => {
-                                console.log("Available Date", e.target.value);
-                                console.log("Available Date", new Date(e.target.value));
-                                updateUpstream({ ...quiz, availableDate: new Date(e.target.value) });
-                            }} 
-                        />
+                    <div className="form-group row">
+                        <div className="col col-form-label text-end"><label htmlFor="availableDate">Available Date</label></div>
+                        <div className="col">
+                            <input 
+                                type="date" 
+                                className="form-control" 
+                                id="availableDate" 
+                                value={new Date(quiz.availableDate).toISOString().split('T')[0]}
+                                onChange={(e) => {
+                                    console.log("Available Date", e.target.value);
+                                    console.log("Available Date", new Date(e.target.value));
+                                    updateUpstream({ ...quiz, availableDate: new Date(e.target.value) });
+                                }} 
+                            />
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="untilDate">Until Date</label>
-                        <input 
-                            type="date" 
-                            className="form-control" 
-                            id="untilDate" 
-                            value={new Date (quiz.untilDate).toISOString().split('T')[0]}
-                            onChange={(e) => updateUpstream({ ...quiz, untilDate: new Date(e.target.value) })} 
-                        />
+                    <div className="form-group row">
+                        <div className="col col-form-label text-end"><label htmlFor="untilDate">Until Date</label></div>
+                        <div className="col">
+                            <input 
+                                type="date" 
+                                className="form-control" 
+                                id="untilDate" 
+                                value={new Date (quiz.untilDate).toISOString().split('T')[0]}
+                                onChange={(e) => updateUpstream({ ...quiz, untilDate: new Date(e.target.value) })} 
+                            />
+                        </div>
                     </div>
                 </form>
             )}
             {activeTab === 'questions' && (
                 <div>
-                    <button className="btn btn-primary" onClick={handleAddNewQuestion}>Add New Question</button>
+                    <button className="btn btn-primary mt-4 mb-4" onClick={handleAddNewQuestion}>Add New Question</button>
                     {questions.length === 0 && (
                         <div className="alert alert-warning" role="alert">
                             No questions found. Click the button above to add a new question.
@@ -281,11 +295,11 @@ export default function QuizEditor({quiz, updateUpstream} : {quiz: QuizInterface
                                                 <h4>{question.title}</h4>
                                             </div>
                                             <div className="col-auto">
-                                                <h4>{question.points} pts</h4>
+                                                <h4>{question.points} points</h4>
                                             </div>
                                             <div className="col-auto">
-                                                <button className="btn btn-primary" onClick={() => handleUpdateQuestion(question)}><FaRocket /></button>
-                                                <button className="btn btn-danger" onClick={() => handleDeleteQuestion(question)}><FaBan /></button>
+                                                <button className="btn btn-primary m-2" onClick={() => handleUpdateQuestion(question)}><FaEdit /></button>
+                                                <button className="btn btn-danger m-2" onClick={() => handleDeleteQuestion(question)}><FaBan /></button>
                                             </div>
                                         </div>
                                         <div className="row">
@@ -300,13 +314,9 @@ export default function QuizEditor({quiz, updateUpstream} : {quiz: QuizInterface
                     )}
                 </div>
             )}
-            <div className="row btn-row">
-                <div className="col">
-                    <button className="btn btn-primary" onClick={handleSave}>Save</button>
-                    <button className="btn btn-primary" onClick={
-                        () => navigate(`/Kanbas/courses/${courseId}/quizzes/${quizId}/preview`)
-                    }>Preview Quiz</button>
-                </div>
+            <div className="row btn-row pub-button-bar col-lg-5">
+                <button className="btn btn-primary col m-2" onClick={handleSave}>Save</button>
+                <button className="btn btn-primary col m-2" onClick={() => navigate(`/Kanbas/courses/${courseId}/quizzes/${quizId}/preview`)}>Preview Quiz</button>
             </div>
         </div>
     );
