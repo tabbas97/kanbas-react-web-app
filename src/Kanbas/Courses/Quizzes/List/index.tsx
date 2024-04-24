@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { QuizInterface } from "../client";
 import * as client from "../client";
-import { FaBan, FaCalendar, FaCheckCircle, FaEllipsisV, FaRocket } from "react-icons/fa";
+import { FaBan, FaCalendar, FaCheckCircle, FaEllipsisV, FaRocket, FaShareSquare } from "react-icons/fa";
 
 export default function QuizzesList() {
     const  {courseId} = useParams();
@@ -76,6 +76,17 @@ export default function QuizzesList() {
         setActiveQuiz(quiz);
     }
 
+    const getNumberOfQuestions = async (quiz : QuizInterface) => {
+        try {
+            const questions = await client.findQuestionsByQuizId(quiz._id);
+            console.log("questions: ", questions);
+            return questions.length;
+        } catch (error) {
+            console.error("Error getting number of questions: ", error);
+            return 0;
+        }
+    }
+
     useEffect(() => {
         client.findQuizzesByCourseId(courseId ?? "").then((quizzes) => {
             setQuizzes(quizzes);
@@ -86,12 +97,13 @@ export default function QuizzesList() {
     return (
         <div className="container">
             <h1>Quizzes</h1>
-            <button className="btn btn-primary" onClick={handleNewQuiz}>New Quiz</button>
+            <button className="btn btn-primary mt-2 mb-2" onClick={handleNewQuiz}>New Quiz</button>
             {quizzes.length === 0 ? <p>No quizzes found</p> : 
                 (
                 <div className="container">
                     <ul className="list-group">
                         {quizzes.map((quiz) => {
+                            // const numQuestions = getNumberOfQuestions(quiz);
                             return (
                                 <li key={quiz._id} className="list-group-item align-items-center">
                                     <div className="row">
@@ -102,7 +114,7 @@ export default function QuizzesList() {
                                             <div className="row">
                                                 <div className="col-11"> 
                                                     { quiz.published === true ? (
-                                                            <FaRocket className="me-2 text-success" />
+                                                            <FaShareSquare className="me-2 text-success" />
                                                         ) : (
                                                             <FaRocket className="me-2 text-secondary" />
                                                     )}
@@ -132,7 +144,7 @@ export default function QuizzesList() {
                                                     {" Due Date: " + new Date(quiz.dueDate).toLocaleDateString()}
                                                 </div>
                                                 <div className="col-4">
-                                                    {quiz.points + " pts" + " | 0 Questions"}
+                                                    {quiz.points + " pts"}
                                                 </div>
                                             </div>
                                             <div className="row">
